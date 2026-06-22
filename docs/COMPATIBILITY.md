@@ -59,13 +59,13 @@ If you are also testing the actual app functions as well as providing diagnostic
 
 #### 2. Open a terminal and navigate to the folder that you saved the script in. Then run the script.
 
-**Windows (PowerShell):**
+Windows (PowerShell):
 
 ```powershell
 timetopay-probe.ps1
 ```
 
-**macOS / Linux / Git Bash:**
+macOS / Linux / Git Bash:
 
 ```bash
 bash timetopay-probe.sh
@@ -88,15 +88,11 @@ The script prints a report. Copy the full output into your GitHub issue.
 
 The script cannot fully test TimeToPay behaviour by itself. With TimeToPay installed and set up, please also check the following. It's reccomended to have the NFC quick settings tile enabled.
 
-[ ] Open selected wallet app -> NFC turns **on** (check your NFC quick settings tile)
-
-[ ] Leave wallet app -> NFC turns **off**
-
-[ ] Switch back to wallet from recents -> NFC turns **on** again
-
-[ ] Open quick settings while wallet is open -> NFC **stays on**
-
-[ ] Wallet clears any "NFC off" warning after re-entry (by reloading)
+- Open selected wallet app -> NFC turns **on** (check your NFC quick settings tile)
+- Leave wallet app -> NFC turns **off**
+- Switch back to wallet from recents -> NFC turns **on** again
+- Open quick settings while wallet is open -> NFC **stays on**
+- Wallet clears any "NFC off" warning after re-entry (by reloading)
 
 Paste results into the issue checkboxes.
 

@@ -5,6 +5,7 @@ Download the latest APK from [GitHub Releases](https://github.com/kattcrazy/Time
 ## Requirements
 
 Watch with Wear OS 3+ with and NFC
+
 PC with [ADB](https://developer.android.com/tools/releases/platform-tools) for adb sideload and permissions grant.
 
 Watch support varies, see [COMPATIBILITY.md](COMPATIBILITY.md).
