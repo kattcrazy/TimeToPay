@@ -1,0 +1,87 @@
+name: Device report
+description: Report compatibility info for your Wear OS watch (run the probe script first)
+title: "[Device] "
+labels: ["device-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping test TimeToPay on your watch!
+
+        1. Connect your watch with [ADB](https://developer.android.com/tools/releases/platform-tools).
+        2. Run the probe script - see [COMPATIBILITY.md](https://github.com/kattcrazy/TimeToPay/blob/master/docs/COMPATIBILITY.md).
+        3. Paste the **full output** below and fill in the test checkboxes.
+
+  - type: input
+    id: watch_name
+    attributes:
+      label: Watch name
+      description: e.g. Pixel Watch 2, Galaxy Watch 6
+      placeholder: Galaxy Watch 7
+    validations:
+      required: true
+
+  - type: input
+    id: model
+    attributes:
+      label: Model number
+      description: From probe output (ro.product.model)
+      placeholder: SM-L315F
+    validations:
+      required: true
+
+  - type: input
+    id: timetopay_version
+    attributes:
+      label: TimeToPay version tested
+      description: From the app or probe output, or "not installed"
+      placeholder: 1.0.0
+    validations:
+      required: true
+
+  - type: input
+    id: wallet_app
+    attributes:
+      label: Payment app used
+      description: Friendly name and package, e.g. Google Wallet (com.google.android.apps.walletnfcrel)
+      placeholder: Google Wallet (com.google.android.apps.walletnfcrel)
+
+  - type: dropdown
+    id: suggested_status
+    attributes:
+      label: Your overall result
+      options:
+        - "✅ Works fully"
+        - "🟡 Mostly works / minor issues"
+        - "🟠 Partial / WIP"
+        - "❌ Does not work"
+        - "❓ Could not test fully"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: manual_tests
+    attributes:
+      label: Manual tests (with TimeToPay installed)
+      options:
+        - label: Open wallet app -> NFC turns on
+        - label: Leave wallet app -> NFC turns off
+        - label: Switch back to wallet from recents -> NFC on again
+        - label: Open quick settings while wallet open -> NFC stays on
+        - label: Wallet clears "NFC off" warning after re-entry
+
+  - type: textarea
+    id: probe_output
+    attributes:
+      label: Probe script output
+      description: Full output from scripts/timetopay-probe.ps1 or scripts/timetopay-probe.sh
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Extra notes
+      description: ADB quirks, missing wallet apps in picker, anything else
+      render: text

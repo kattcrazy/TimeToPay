@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: General bug or feature
+    url: https://github.com/kattcrazy/TimeToPay/issues/new
+    about: Bug reports and ideas (not device compatibility - use Device report template)

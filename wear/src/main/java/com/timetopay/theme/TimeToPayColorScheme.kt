@@ -5,7 +5,7 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.ui.graphics.Color
 import androidx.wear.compose.material3.ColorScheme as WearColorScheme
 
-/** Matches Share My Thing watch palette — fixed dark, true-black OLED background. */
+/** Matches Share My Thing watch palette - fixed dark, true-black OLED background. */
 object TimeToPayColorScheme {
     private val dark: ColorScheme = darkColorScheme(
         primary = Color(0xFFACC7FF),

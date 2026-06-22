@@ -204,7 +204,7 @@ class TimeToPayAccessibilityService : AccessibilityService() {
         private const val NFC_POLL_MS = 100L
         private const val RESTART_COOLDOWN_MS = 3000L
 
-        // Quick panel, notification shade, and other system UI overlays — not real app switches.
+        // Merged from confirmed devices - see docs/COMPATIBILITY.md
         private val TRANSIENT_OVERLAY_PACKAGES = setOf(
             "com.google.android.apps.wearable.systemui",
             "com.google.android.wearable.systemui",
