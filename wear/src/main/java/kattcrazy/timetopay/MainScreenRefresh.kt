@@ -1,4 +1,4 @@
-package com.timetopay
+package kattcrazy.timetopay
 
 import android.content.BroadcastReceiver
 import android.content.Context

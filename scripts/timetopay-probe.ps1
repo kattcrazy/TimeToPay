@@ -120,14 +120,14 @@ adb shell dumpsys window 2>$null | Select-String -Pattern "mCurrentFocus=|mFocus
 
 Write-Section "TIMETOPAY SETUP"
 Stop-IfAdbOffline "before TimeToPay setup check"
-$installed = adb shell pm list packages com.timetopay 2>$null | Select-String "package:com\.timetopay"
+$installed = adb shell pm list packages kattcrazy.timetopay 2>$null | Select-String "package:kattcrazy\.timetopay"
 if ($installed) {
     Write-Output "installed=yes"
-    $ver = adb shell dumpsys package com.timetopay 2>$null | Select-String "versionName" | Select-Object -First 1
+    $ver = adb shell dumpsys package kattcrazy.timetopay 2>$null | Select-String "versionName" | Select-Object -First 1
     if ($ver) { Write-Output $ver.Line.Trim() }
-    $a11y = (adb shell settings get secure enabled_accessibility_services 2>$null) -match "com\.timetopay"
+    $a11y = (adb shell settings get secure enabled_accessibility_services 2>$null) -match "kattcrazy\.timetopay"
     Write-Output "accessibility=$(if ($a11y) { 'enabled' } else { 'not enabled' })"
-    $grant = adb shell dumpsys package com.timetopay 2>$null | Select-String "WRITE_SECURE_SETTINGS.*granted=true"
+    $grant = adb shell dumpsys package kattcrazy.timetopay 2>$null | Select-String "WRITE_SECURE_SETTINGS.*granted=true"
     if ($grant) { Write-Output $grant.Line.Trim() } else { Write-Output "WRITE_SECURE_SETTINGS=not granted" }
     Write-Output "Recent TimeToPay NFC logs:"
     adb logcat -d -s TimeToPay:* 2>$null | Select-Object -Last 15

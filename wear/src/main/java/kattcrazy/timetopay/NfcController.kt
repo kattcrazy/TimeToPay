@@ -1,4 +1,4 @@
-package com.timetopay
+package kattcrazy.timetopay
 
 import android.annotation.SuppressLint
 import android.content.Context

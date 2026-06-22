@@ -1,4 +1,4 @@
-package com.timetopay
+package kattcrazy.timetopay
 
 import android.content.Intent
 import android.os.Bundle
@@ -26,7 +26,7 @@ import androidx.wear.compose.material3.SurfaceTransformation
 import androidx.wear.compose.material3.Text
 import androidx.wear.compose.material3.lazy.rememberTransformationSpec
 import androidx.wear.compose.material3.lazy.transformedHeight
-import com.timetopay.theme.TimeToPayTheme
+import kattcrazy.timetopay.theme.TimeToPayTheme
 
 class MainActivity : ComponentActivity() {
     private val refreshState = mutableIntStateOf(0)

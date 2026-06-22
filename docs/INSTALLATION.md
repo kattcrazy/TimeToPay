@@ -49,7 +49,7 @@ adb install -r timetopay-wear.apk
 NFC toggling needs a high-level permission.
 
 ```bash
-adb shell pm grant com.timetopay android.permission.WRITE_SECURE_SETTINGS
+adb shell pm grant kattcrazy.timetopay android.permission.WRITE_SECURE_SETTINGS
 ```
 
 Re-run after uninstall or reinstall.

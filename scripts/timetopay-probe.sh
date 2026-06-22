@@ -82,11 +82,11 @@ require_adb "after quick-panel pause (watch may have slept)"
 adb_cmd shell dumpsys window 2>/dev/null | grep -E "mCurrentFocus=|mFocusedApp=|StatusBar" | head -10 || true
 
 section "TIMETOPAY SETUP"
-if adb_cmd shell pm list packages com.timetopay 2>/dev/null | grep -q timetopay; then
+if adb_cmd shell pm list packages kattcrazy.timetopay 2>/dev/null | grep -q timetopay; then
   echo "installed=yes"
-  echo "versionName=$(adb_cmd shell dumpsys package com.timetopay 2>/dev/null | grep versionName | head -1 | tr -d '\r' || echo unknown)"
-  echo "accessibility=$(adb_cmd shell settings get secure enabled_accessibility_services 2>/dev/null | tr -d '\r' | grep -o 'com.timetopay[^:]*' || echo not enabled)"
-  echo "WRITE_SECURE_SETTINGS=$(adb_cmd shell dumpsys package com.timetopay 2>/dev/null | grep -A1 WRITE_SECURE_SETTINGS | grep granted | head -1 | tr -d '\r' || echo unknown)"
+  echo "versionName=$(adb_cmd shell dumpsys package kattcrazy.timetopay 2>/dev/null | grep versionName | head -1 | tr -d '\r' || echo unknown)"
+  echo "accessibility=$(adb_cmd shell settings get secure enabled_accessibility_services 2>/dev/null | tr -d '\r' | grep -o 'kattcrazy.timetopay[^:]*' || echo not enabled)"
+  echo "WRITE_SECURE_SETTINGS=$(adb_cmd shell dumpsys package kattcrazy.timetopay 2>/dev/null | grep -A1 WRITE_SECURE_SETTINGS | grep granted | head -1 | tr -d '\r' || echo unknown)"
   echo "Recent TimeToPay NFC logs:"
   adb_cmd logcat -d -s TimeToPay:* 2>/dev/null | tail -15 || echo "(none)"
 else

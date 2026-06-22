@@ -7,6 +7,6 @@
     public boolean disable(boolean);
 }
 
--keep class com.timetopay.TimeToPayAccessibilityService { *; }
+-keep class kattcrazy.timetopay.TimeToPayAccessibilityService { *; }
 
 -dontwarn android.nfc.NfcAdapter

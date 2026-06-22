@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.timetopay"
+    namespace = "kattcrazy.timetopay"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.timetopay"
+        applicationId = "kattcrazy.timetopay"
         minSdk = 30
         targetSdk = 35
         versionCode = 1

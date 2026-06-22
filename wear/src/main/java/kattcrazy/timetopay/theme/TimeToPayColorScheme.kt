@@ -1,4 +1,4 @@
-package com.timetopay.theme
+package kattcrazy.timetopay.theme
 
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.darkColorScheme

@@ -1,4 +1,4 @@
-package com.timetopay
+package kattcrazy.timetopay
 
 import android.accessibilityservice.AccessibilityService
 import android.content.BroadcastReceiver

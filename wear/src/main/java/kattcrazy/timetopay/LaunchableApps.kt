@@ -1,4 +1,4 @@
-package com.timetopay
+package kattcrazy.timetopay
 
 import android.content.Intent
 import android.content.pm.ApplicationInfo

@@ -1,4 +1,4 @@
-package com.timetopay
+package kattcrazy.timetopay
 
 import android.graphics.drawable.Drawable
 import androidx.compose.foundation.Image
