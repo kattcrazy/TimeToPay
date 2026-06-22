@@ -74,6 +74,13 @@ adb shell settings put secure accessibility_enabled 1
 
 Open TimeToPay → Choose apps → tick your payment app(s) → Save.
 
+## Releasing
+
+1. Bump `versionCode` and `versionName` in `wear/build.gradle.kts`.
+2. Commit and push to GitHub.
+3. Create a [GitHub Release](https://github.com/kattcrazy/TimeToPay/releases/new) with a tag (for example `v1.0.0`) and publish it.
+
+GitHub Actions builds the minified APK and attaches `timetopay-wear.apk` automatically when the release is published. You can also run the workflow manually from the Actions tab.
 
 ## Uninstall
 
