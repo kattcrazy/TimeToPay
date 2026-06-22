@@ -13,12 +13,27 @@ adb_cmd() {
   adb "$@"
 }
 
+require_adb() {
+  local context="${1:-}"
+  local state
+  state="$(adb get-state 2>&1 | tr -d '\r')"
+  if [ "$state" != "device" ]; then
+    echo ""
+    echo "ERROR: Watch ADB is offline${context:+ ($context)}."
+    echo "Wake your watch, unlock it, and reconnect wireless debugging if needed."
+    echo "Then re-run: bash timetopay-probe.sh"
+    exit 1
+  fi
+}
+
 get_mstate() {
   adb_cmd shell dumpsys nfc 2>/dev/null | grep "^mState=" | head -1 || echo "mState=unknown"
 }
 
 section "TIMETOPAY PROBE REPORT"
 echo "Generated: $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+
+require_adb "at start"
 
 section "DEVICE"
 adb_cmd shell getprop ro.product.manufacturer
@@ -63,6 +78,7 @@ adb_cmd shell pm list packages | grep -i systemui || echo "(none found)"
 section "QUICK PANEL FOCUS"
 echo "Open quick settings on your watch now, then press Enter..."
 read -r
+require_adb "after quick-panel pause (watch may have slept)"
 adb_cmd shell dumpsys window 2>/dev/null | grep -E "mCurrentFocus=|mFocusedApp=|StatusBar" | head -10 || true
 
 section "TIMETOPAY SETUP"
