@@ -9,6 +9,8 @@ PC with [ADB](https://developer.android.com/tools/releases/platform-tools) for a
 
 Watch support varies, see [COMPATIBILITY.md](COMPATIBILITY.md).
 
+## Prerequisites
+
 <details>
 <summary>Connect via ADB</summary>
 

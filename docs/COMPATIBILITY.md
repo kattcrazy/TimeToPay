@@ -5,9 +5,13 @@ TimeToPay is built for Wear OS 3+ in general, but NFC control and system UI beha
 ## Status legend
 
 ✅ Tested and working on real hardware
+
 🟡 Likely works but not tested on that exact model
+
 🟠 Work in progress. Partial support or open issue
+
 ❓ Unknown... needs a contributor
+
 ❌ Known broken or blocked, needs help
 
 ## Compatibility Table
@@ -20,13 +24,13 @@ TimeToPay is built for Wear OS 3+ in general, but NFC control and system UI beha
 | - | Galaxy Watch 4/5 | ? | ? | ? | ? | ❓ |
 | - | Other Wear OS 3+ | ? | ? | ? | ? | ❓ |
 
----
-
 ## Contributing device info
 
 If your watch isn't listed above, or is listed as 🟡 or ❓, run the probe script and [open a device report issue](https://github.com/kattcrazy/TimeToPay/issues/new?template=device-report.yml).
 
 ### Run the probe script
+
+#### Prerequisites
 
 <details>
 <summary>Connect via ADB</summary>
@@ -46,14 +50,14 @@ You need [ADB platform-tools](https://developer.android.com/tools/releases/platf
 Note for Galaxy Watch 6/7: If pairing fails, temporarily turn off Bluetooth so Wi‑Fi debugging stays active.
 </details>
 
-If you are also testing the actual app functions as well as providing diagnostics (recommended), complete [installation](INSTALLATION.md) first.
+If you are also testing the actual app functions as well as providing diagnostics (recommended), complete [installation](INSTALLATION.md).
 
-1. Download the probe script for your platform:
+#### 1. Download the probe script for your platform:
 
    - [timetopay-probe.ps1](https://raw.githubusercontent.com/kattcrazy/TimeToPay/master/scripts/timetopay-probe.ps1) (Windows)
    - [timetopay-probe.sh](https://raw.githubusercontent.com/kattcrazy/TimeToPay/master/scripts/timetopay-probe.sh) (macOS / Linux)
 
-2. Open a terminal and navigate to the folder that you saved the script in. Then run the script.
+#### 2. Open a terminal and navigate to the folder that you saved the script in. Then run the script.
 
 **Windows (PowerShell):**
 
@@ -85,9 +89,13 @@ The script prints a report. Copy the full output into your GitHub issue.
 The script cannot fully test TimeToPay behaviour by itself. With TimeToPay installed and set up, please also check the following. It's reccomended to have the NFC quick settings tile enabled.
 
 [ ] Open selected wallet app -> NFC turns **on** (check your NFC quick settings tile)
+
 [ ] Leave wallet app -> NFC turns **off**
+
 [ ] Switch back to wallet from recents -> NFC turns **on** again
+
 [ ] Open quick settings while wallet is open -> NFC **stays on**
+
 [ ] Wallet clears any "NFC off" warning after re-entry (by reloading)
 
 Paste results into the issue checkboxes.
