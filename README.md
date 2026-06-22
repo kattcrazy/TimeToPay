@@ -1,14 +1,14 @@
-# TimeToPay - NFC WearOS Automater
+# <img src="app_mark.png" alt="TimeToPay icon" width="36" /> TimeToPay - NFC WearOS Automater <img src="app_mark.png" alt="TimeToPay icon" width="36" />
 
 A tiny app that automatically turns NFC off and on.
 
 TimeToPay is a standalone Wear OS app. Pick which apps should enable NFC, for example Google Wallet or Samsung Wallet, and NFC turns on only while those apps are open. No phone or sign-up required.
 
-This app must be sideloaded with a one-time ADB setup on a PC. It can't be in the Play Store because of the permissions required.
+This app must be sideloaded. Accessibility can be enabled on the watch; one ADB command is still needed for NFC control. It can't be in the Play Store because of the permissions required.
 
 ## Features
 
-- Auto NFC: NFC on while the selected app is open; off when you leave it.
+- Auto NFC: NFC on while selected apps are open; off when you leave them.
 - You choose the apps: Use something else instead of Google Wallet? All good! Choose any launchable app on your watch. 
 - Standalone watch app: Works without a phone. No sync, no cloud, no network.
 
@@ -17,60 +17,31 @@ This app must be sideloaded with a one-time ADB setup on a PC. It can't be in th
 | | |
 |---|---|
 | Watch app | Wear OS 3+ with NFC |
-| Setup | PC with [ADB](https://developer.android.com/tools/releases/platform-tools); watch and PC on same Wi-Fi for wireless debugging |
+| Setup | Watch for accessibility; PC with [ADB](https://developer.android.com/tools/releases/platform-tools) for one NFC permission grant |
 
 ## Setup
 
-Download the latest APK from [GitHub Releases](https://github.com/kattcrazy/TimeToPay/releases) (`timetopay-wear.apk`).
+Download the latest APK from [GitHub Releases](https://github.com/kattcrazy/TimeToPay/releases) (`timetopay-wear.apk`) and install it on your watch.
 
-### 1. Prepare the watch
+### 1. Enable accessibility on the watch
 
-1. Settings → About watch → Software → tap Software version 5 times (Developer mode).
-2. Settings → Developer options → ADB debugging ON, Wireless debugging ON.
-3. Watch and PC on the same Wi-Fi.
+1. Open TimeToPay on your watch.
+2. Tap Open accessibility and turn on TimeToPay.
+3. If Android blocks it, tap Open app info, open the menu (⋮), choose Allow restricted settings, then try accessibility again.
 
-Galaxy Watch 6/7: If pairing fails, temporarily turn off Bluetooth so Wi-Fi stays active.
+### 2. Grant NFC control (one-time ADB)
 
-### 2. Pair and connect
-
-On the watch: Developer options → Wireless debugging → Pair new device.
+NFC toggling still needs a one-time PC grant. Enable wireless debugging on your watch (Settings → Developer options), pair with ADB, then run:
 
 ```bash
-adb pair WATCH_IP:PAIRING_PORT
-adb connect WATCH_IP:CONNECTION_PORT
-adb devices
-```
-
-### 3. Install and grant permissions
-
-```bash
-adb install timetopay-wear.apk
 adb shell pm grant com.timetopay android.permission.WRITE_SECURE_SETTINGS
 ```
 
-Re-run `pm grant` after uninstall or reinstall.
+Re-run after uninstall or reinstall.
 
-### 4. Enable accessibility
+Galaxy Watch 6/7: If ADB pairing fails, temporarily turn off Bluetooth so Wi-Fi stays active.
 
-```bash
-adb shell settings get secure enabled_accessibility_services
-```
-
-If empty:
-
-```bash
-adb shell settings put secure enabled_accessibility_services com.timetopay/.TimeToPayAccessibilityService
-adb shell settings put secure accessibility_enabled 1
-```
-
-If other services are already enabled, append with a colon (do not replace them):
-
-```bash
-adb shell settings put secure enabled_accessibility_services EXISTING:com.timetopay/.TimeToPayAccessibilityService
-adb shell settings put secure accessibility_enabled 1
-```
-
-### 5. Choose apps on the watch
+### 3. Choose apps on the watch
 
 Open TimeToPay → Choose apps → tick your payment app(s) → Save.
 
@@ -99,6 +70,6 @@ This project uses the [GNU General Public License v3.0](https://www.gnu.org/lice
 
 ## About
 
-Leaving NFC on causes security risks (accidential payments), but you still want to pay quickly? This app was built to solve that problem! Please [open an issue](https://github.com/kattcrazy/TimeToPay/issues) if it  isn't working or you have an idea.
+Leaving NFC on causes security risks (accidential payments). But... you still want to pay quickly, of course! This app was built to solve that problem! Please [open an issue](https://github.com/kattcrazy/TimeToPay/issues) if it  isn't working or you have an idea.
 
 If TimeToPay helps speed up your day-to-day payments, consider supporting me [here](https://kattcrazy.nz/product/support-me/) :)

@@ -12,11 +12,15 @@
     <string name="status_yes">Yes</string>
     <string name="status_no">No</string>
     <string name="status_on">On</string>
+    <string name="status_turning_on">Turning on</string>
     <string name="status_off">Off</string>
     <string name="choose_apps_button">Choose apps</string>
-    <string name="setup_hint">One-time PC setup required. See github.com/kattcrazy/TimeToPay</string>
+    <string name="open_accessibility_button">Open accessibility</string>
+    <string name="open_app_info_button">Open app info</string>
+    <string name="setup_hint_accessibility">Tap Open accessibility > Install apps and toggle on TimeToPay. If blocked, open App info and allow restricted settings first.</string>
+    <string name="setup_hint_secure_settings">One-time PC ADB grant still needed for NFC control.</string>
     <string name="no_apps_selected_hint">Select at least one app to enable auto NFC.</string>
-    <string name="ready_hint">Ready. NFC toggles for your selected apps.</string>
+    <string name="ready_hint">NFC will turn on and off with your selected apps.</string>
     <string name="credit_by">By Kattcrazy</string>
     <string name="credit_repo">github.com/kattcrazy/TimeToPay</string>
 </resources>

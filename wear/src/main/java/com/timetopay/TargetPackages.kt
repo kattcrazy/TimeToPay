@@ -1,6 +1,7 @@
 package com.timetopay
 
 import android.content.Context
+import android.content.SharedPreferences
 
 object TargetPackages {
     private const val PREFS_NAME = "timetopay_prefs"
@@ -16,8 +17,30 @@ object TargetPackages {
         context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
             .edit()
             .putStringSet(KEY_SELECTED, HashSet(packages))
-            .apply()
+            .commit()
     }
 
     fun hasSelection(context: Context): Boolean = getSelected(context).isNotEmpty()
+
+    fun registerOnSelectionChanged(
+        context: Context,
+        onChanged: () -> Unit,
+    ): SharedPreferences.OnSharedPreferenceChangeListener {
+        val listener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
+            if (key == KEY_SELECTED) {
+                onChanged()
+            }
+        }
+        context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            .registerOnSharedPreferenceChangeListener(listener)
+        return listener
+    }
+
+    fun unregisterOnSelectionChanged(
+        context: Context,
+        listener: SharedPreferences.OnSharedPreferenceChangeListener,
+    ) {
+        context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            .unregisterOnSharedPreferenceChangeListener(listener)
+    }
 }
