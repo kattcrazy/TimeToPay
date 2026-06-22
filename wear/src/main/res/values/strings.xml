@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TimeToPay</string>
+    <string name="app_full_name">TimeToPay - NFC WearOS Automater</string>
+    <string name="choose_apps">Choose apps</string>
+    <string name="save">Save</string>
+    <string name="accessibility_service_description">Turns NFC on while selected apps are open, and off when you leave them.</string>
+    <string name="status_secure_settings">Secure settings</string>
+    <string name="status_accessibility">Accessibility</string>
+    <string name="status_apps_selected">Apps selected</string>
+    <string name="status_nfc">NFC</string>
+    <string name="status_yes">Yes</string>
+    <string name="status_no">No</string>
+    <string name="status_on">On</string>
+    <string name="status_off">Off</string>
+    <string name="choose_apps_button">Choose apps</string>
+    <string name="setup_hint">One-time PC setup required. See github.com/kattcrazy/TimeToPay</string>
+    <string name="no_apps_selected_hint">Select at least one app to enable auto NFC.</string>
+    <string name="ready_hint">Ready. NFC toggles for your selected apps.</string>
+    <string name="credit_by">By Kattcrazy</string>
+    <string name="credit_repo">github.com/kattcrazy/TimeToPay</string>
+</resources>

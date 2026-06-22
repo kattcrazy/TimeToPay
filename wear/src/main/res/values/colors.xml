@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Share My Thing brand blue; matches TimeToPay launcher artwork -->
+    <color name="ic_launcher_background">#6495ED</color>
+</resources>
