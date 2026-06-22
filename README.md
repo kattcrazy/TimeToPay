@@ -18,12 +18,6 @@ This app must be sideloaded. Accessibility must be enabled for this app via the 
 
 [Releases](https://github.com/kattcrazy/TimeToPay/releases)
 
-## Requirements
-
-Watch with Wear OS 3+ with and NFC
-
-For setup, see [INSTALLATION.md](docs/INSTALLATION.md)
-
 ## Privacy
 
 No network permissions, no data leaves your watch. The app compares foreground app package names to your local selection stored in SharedPreferences.
