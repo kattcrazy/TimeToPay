@@ -28,6 +28,25 @@ jobs:
       - name: Install SDK packages
         run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
 
+      - name: Configure release signing
+        env:
+          KEYSTORE_BASE64: ${{ secrets.UPLOAD_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.UPLOAD_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.UPLOAD_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.UPLOAD_KEY_PASSWORD }}
+        run: |
+          if [ -z "$KEYSTORE_BASE64" ]; then
+            echo "UPLOAD_KEYSTORE_BASE64 secret is required for signed releases."
+            exit 1
+          fi
+          echo "$KEYSTORE_BASE64" | base64 -d > upload-keystore.jks
+          cat > keystore.properties <<EOF
+          storeFile=upload-keystore.jks
+          storePassword=${KEYSTORE_PASSWORD}
+          keyAlias=${KEY_ALIAS}
+          keyPassword=${KEY_PASSWORD}
+          EOF
+
       - name: Build release APK
         run: chmod +x gradlew && ./gradlew :wear:assembleRelease --no-daemon
 

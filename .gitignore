@@ -18,5 +18,6 @@ Thumbs.db
 
 # Release signing (local only)
 keystore.properties
+keystore-credentials.local.txt
 *.jks
 *.keystore

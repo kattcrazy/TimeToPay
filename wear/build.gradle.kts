@@ -26,8 +26,6 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",
             )
-            // Debug signing keeps sideload installs working without a release keystore.
-            signingConfig = signingConfigs.getByName("debug")
         }
     }
 

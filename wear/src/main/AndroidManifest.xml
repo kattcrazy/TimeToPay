@@ -36,6 +36,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/MainActivityTheme.Starting">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,7 +47,8 @@
         <activity
             android:name=".AppPickerActivity"
             android:exported="false"
-            android:label="@string/choose_apps" />
+            android:label="@string/choose_apps"
+            android:screenOrientation="portrait" />
 
         <service
             android:name=".TimeToPayAccessibilityService"
