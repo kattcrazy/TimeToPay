@@ -1,6 +1,6 @@
 # <img src="app_mark.png" alt="TimeToPay icon" width="36" /> TimeToPay - NFC WearOS Automater <img src="app_mark.png" alt="TimeToPay icon" width="36" />
 
-TimeToPay is a tiny Wear OS app that automatically turns NFC off and on. Pick which apps should trigger it (Google Wallet, Samsung Wallet, etc) and NFC turns on only while those apps are open. No phone or sign-up required.
+TimeToPay is a tiny Wear OS app that automatically turns NFC off and on. Pick which apps should trigger it (Google Wallet, Samsung Wallet, etc) and NFC turns on only while those apps are open.
 
 This app must be sideloaded. Accessibility must be enabled for this app via the watch, and the secure settings permission must be granted via ADB for needed for NFC control. This app can't be in the Play Store because of the permissions required.
 
