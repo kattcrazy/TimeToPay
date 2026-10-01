@@ -6,7 +6,7 @@
 </div>
 <!-- /project-directory-status -->
 
-# <img src="app_mark.png" alt="TimeToPay icon" width="36" /> TimeToPay - NFC WearOS Automater <img src="app_mark.png" alt="TimeToPay icon" width="36" />
+# <img src="app_mark.png" alt="TimeToPay icon" width="36" /> TimeToPay
 
 TimeToPay is a tiny Wear OS app that automatically turns NFC off and on. Pick which apps should trigger it (Google Wallet, Samsung Wallet, etc) and NFC turns on only while those apps are open.
 
