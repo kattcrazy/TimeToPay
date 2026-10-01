@@ -1,3 +1,11 @@
+<!-- project-directory-status -->
+<div align="center">
+
+[![Not maintained](https://img.shields.io/endpoint?style=for-the-badge&url=https%3A%2F%2Fraw.githubusercontent.com%2Fkattcrazy%2Fkattcrazy%2Fmain%2Fbadges%2FTimeToPay.json)](https://github.com/kattcrazy/kattcrazy/blob/main/PROJECT-DIRECTORY.md) [![Cancelled - on Github as inspiration for others](https://img.shields.io/endpoint?style=for-the-badge&url=https%3A%2F%2Fraw.githubusercontent.com%2Fkattcrazy%2Fkattcrazy%2Fmain%2Fbadges%2FTimeToPay-section.json)](https://github.com/kattcrazy/kattcrazy/blob/main/PROJECT-DIRECTORY.md)
+
+</div>
+<!-- /project-directory-status -->
+
 # <img src="app_mark.png" alt="TimeToPay icon" width="36" /> TimeToPay - NFC WearOS Automater <img src="app_mark.png" alt="TimeToPay icon" width="36" />
 
 TimeToPay is a tiny Wear OS app that automatically turns NFC off and on. Pick which apps should trigger it (Google Wallet, Samsung Wallet, etc) and NFC turns on only while those apps are open.
